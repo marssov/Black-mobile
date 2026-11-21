@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK MOBILE — Построй свою империю с нуля</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="brand">
+                <span class="brand-crown">♛</span>
+                <span class="brand-name">BLACK <b>MOBILE</b></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#paths">Выбор пути</a>
+                <a href="#showroom">Автосалон</a>
+                <a href="#start">Старт</a>
+                <a href="#community">Сообщество</a>
+            </nav>
+
+            <a href="#start" class="btn-gold-sm">ИГРАТЬ</a>
+        </div>
+    </header>
+
+    <div class="status-ticker">
+        <div class="container ticker-inner">
+            <div class="ticker-item">
+                <span class="dot-emerald"></span>
+                <span>СЕРВЕР 01 [CHILLI]: <strong>ONLINE (184/500)</strong></span>
+            </div>
+            <div class="ticker-sep">•</div>
+            <div class="ticker-item ticker-gold">
+                <span>⚡ АКЦИЯ Х2 ДОНАТ АКТИВНА</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero" style="background-image: linear-gradient(180deg, rgba(11,12,14,0.68) 0%, rgba(11,12,14,0.85) 75%, #0B0C0E 100%), url('Fon.jpg');">
+        <div class="container hero-content">
+            <div class="vip-tag">PREMIUM CRMP / SAMP PROJECT</div>
+
+            <h1 class="hero-title">
+                ПОСТРОЙ СВОЮ<br>
+                <span class="gold-gradient">ИМПЕРИЮ С НУЛЯ</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Элитный ролевой проект <b>BLACK MOBILE</b> с продуманной экономикой, аукционами бизнеса и эксклюзивным автопарком.
+            </p>
+
+            <div class="bonus-chips">
+                <div class="chip">
+                    <span class="chip-icon">💰</span>
+                    <span><strong>50 000 000 ₽</strong> НА СТАРТЕ</span>
+                </div>
+                <div class="chip">
+                    <span class="chip-icon">👑</span>
+                    <span><strong>5 000</strong> DONATE COINS</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://github.com" class="btn-gold-xl">
+                    <span class="btn-shimmer"></span>
+                    <span>СКАЧАТЬ ЛАУНЧЕР (APK)</span>
+                </a>
+                <div class="cta-meta">v1.0 • 113 MB • Android</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paths" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="gold-kicker">● РОЛЕВАЯ СИСТЕМА</span>
+                <h2>ВЫБЕРИ СВОЙ <span class="gold-gradient">ПУТЬ</span></h2>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchPath('gov', this)">🚓 Гос. структуры</button>
+                <button class="tab-btn" onclick="switchPath('biz', this)">💼 Бизнес и Тачки</button>
+                <button class="tab-btn" onclick="switchPath('crime', this)">🔫 Криминал и ОПГ</button>
+            </div>
+
+            <div class="path-showcase">
+                <div class="path-img-wrap">
+                    <img id="path-img" src="Screenshot1.jpg" alt="Путь в игре BLACK MOBILE">
+                </div>
+                <div class="path-info">
+                    <span class="path-badge" id="path-badge">ЗАКОН И ПОРЯДОК</span>
+                    <h3 id="path-title">ФСБ, Полиция и Армия</h3>
+                    <p id="path-desc">Поднимись от рядового до директора ФСБ. Проводи спецоперации, контролируй порядок на дорогах и защищай интересы государства.</p>
+                    <div class="path-tip" id="path-tip">
+                        💡 <b>Стартовый совет:</b> Получи военный билет в первые дни и подай заявку в академию ФСБ для доступа к закрытому автопарку.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Автосалон и Тюнинг (Горизонтальная лента) -->
+    <section id="showroom" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="gold-kicker">● ЭЛИТНЫЙ АВТОСАЛОН</span>
+                <h2>АВТОПАРК И <span class="gold-gradient">ТЮНИНГ</span></h2>
+                <p class="section-sub">Более 300 реальных авто, эксклюзивные номера, пневмоподвеска и детальный стайлинг в BLACK MOBILE.</p>
+            </div>
+
+            <div class="showroom-scroll">
+                <div class="car-card">
+                    <div class="car-img-box">
+                        <img src="Screenshot3.jpg" alt="Bentley Continental GT">
+                        <span class="car-tag">LUXURY CLASS</span>
+                    </div>
+                    <div class="car-body">
+                        <h3>Bentley Continental GT</h3>
+                        <p>Эксклюзивный золотой окрас, полный тюнинг двигателя и премиум-салон.</p>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-img-box">
+                        <img src="Screenshot4.jpg" alt="Porsche Panamera Turbo">
+                        <span class="car-tag">SPORT SEDAN</span>
+                    </div>
+                    <div class="car-body">
+                        <h3>Porsche Panamera</h3>
+                        <p>Чёрный матовый кузов, тонировка в круг и настроенный выхлоп.</p>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-img-box">
+                        <img src="Screenshot5.jpg" alt="Lamborghini Revuelto">
+                        <span class="car-tag">HYPERCAR</span>
+                    </div>
+                    <div class="car-body">
+                        <h3>Lamborghini Revuelto</h3>
+                        <p>Максимальная скорость на трассе, блатные номера и индивидуальный винил.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок Быстрый старт (Вертикальный золотой таймлайн) -->
+    <section id="start" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="gold-kicker">● ИНСТРУКЦИЯ</span>
+                <h2>БЫСТРЫЙ <span class="gold-gradient">СТАРТ</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-card">
+                        <h3>Шаг 1 → Скачай АРК-клиент</h3>
+                        <p>Загрузи официальный лаунчер BLACK MOBILE на своё Android-устройство.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-card">
+                        <h3>Шаг 2 → Установи кэш в один клик</h3>
+                        <p>Открой приложение и дождись автоматической загрузки карты и автопарка.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-card">
+                        <h3>Шаг 3 → Зайди под RP-ником и забери бонус</h3>
+                        <p>Укажи ник формата <b>Имя_Фамилия</b>, выбери сервер <b>CHILLI</b> и получи стартовый капитал.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="start-cta-wrap">
+                <a href="https://github.com" class="btn-gold-xl">
+                    <span class="btn-shimmer"></span>
+                    <span>СКАЧАТЬ BLACK MOBILE (.APK)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Пополнение и Сообщество -->
+    <section id="community" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="gold-kicker">● СЕРВИСЫ ПРОЕКТА</span>
+                <h2>МАГАЗИН И <span class="gold-gradient">СООБЩЕСТВО</span></h2>
+            </div>
+
+            <div class="community-grid">
+                <a href="https://telegram.me" target="_blank" rel="noopener noreferrer" onclick="openTelegramLink(event, 'Panel_BlackMobile_bot')" class="comm-card comm-gold">
+                    <div class="comm-icon gold">👑</div>
+                    <div class="comm-text">
+                        <h3>Магазин / Донат-бот</h3>
+                        <p>Покупка VIP-статусов, эксклюзивных кейсов, авто и игровой валюты.</p>
+                    </div>
+                    <span class="comm-arrow">↗</span>
+                </a>
+
+                <a href="https://telegram.me" target="_blank" rel="noopener noreferrer" onclick="openTelegramLink(event, 'Black_Mobilez')" class="comm-card comm-blue">
+                    <div class="comm-icon blue">TG</div>
+                    <div class="comm-text">
+                        <h3>Официальный Telegram</h3>
+                        <p>Новости обновлений, промокоды на бонусы и розыгрыши среди игроков.</p>
+                    </div>
+                    <span class="comm-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="brand">
+                <span class="brand-crown">♛</span>
+                <span class="brand-name">BLACK <b>MOBILE</b></span>
+            </div>
+            <p>© 2026 BLACK MOBILE. Все права защищены. Проект не связан с Rockstar Games или Take-Two Interactive.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
