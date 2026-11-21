@@ -54,3 +54,71 @@ function switchPath(key, btnElement) {
     document.getElementById('path-desc').textContent = data.desc;
     document.getElementById('path-tip').innerHTML = data.tip;
 }
+
+// 3. Падающие золотые искры и золотая пыль на фоне (автосоздание Canvas)
+(function initGoldSparks() {
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.inset = '0';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '50';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let sparks = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const goldPalette = [
+        'rgba(253, 224, 71, 0.9)',  // Яркое светлое золото
+        'rgba(245, 158, 11, 0.85)', // Насыщенный янтарь
+        'rgba(217, 119, 6, 0.75)'   // Глубокий золотой отблеск
+    ];
+
+    function createSpark(randomY = false) {
+        return {
+            x: Math.random() * canvas.width,
+            y: randomY ? Math.random() * canvas.height : -10,
+            r: Math.random() * 2.2 + 0.7,
+            speedY: Math.random() * 1.1 + 0.45,
+            driftX: (Math.random() - 0.5) * 0.5,
+            sway: Math.random() * Math.PI * 2,
+            color: goldPalette[Math.floor(Math.random() * goldPalette.length)]
+        };
+    }
+
+    for (let i = 0; i < 60; i++) {
+        sparks.push(createSpark(true));
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        sparks.forEach((s, i) => {
+            s.sway += 0.025;
+            s.y += s.speedY;
+            s.x += s.driftX + Math.sin(s.sway) * 0.35;
+
+            if (s.y > canvas.height + 10) {
+                sparks[i] = createSpark(false);
+            }
+
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = s.color;
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = '#F59E0B';
+            ctx.fill();
+            ctx.restore();
+        });
+
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
